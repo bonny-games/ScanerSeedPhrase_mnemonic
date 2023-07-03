@@ -12,3 +12,11 @@
 #
 # pip install -r requirements.txt
 # python main.py
+#
+#
+# Start
+#
+# mak,Linucs: source venv/bin/activate   
+# Windows: venv\Scripts\activate
+#
+# python main.py
