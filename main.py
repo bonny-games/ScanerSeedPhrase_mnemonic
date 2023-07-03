@@ -9,6 +9,21 @@ import blocsein
 import mes
 import Proxi
 import RPSScaner
+from datetime import datetime
+
+i = 0
+timeStart = datetime.now()
+
+def AcStartSpidTest():
+    global i
+    ac = Ac()
+    t = ac.public_key
+    i += 1
+    if(i>1_000):
+        print(datetime.now()-timeStart)
+        print(i)
+        exit()
+
 
 def AcStart():
     ac = Ac()

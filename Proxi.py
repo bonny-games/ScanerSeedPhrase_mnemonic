@@ -94,6 +94,7 @@ class Proxi:
 
         self.__TestGlobalMulti()
         if len(self.proxiList) <= config.minimumProcsis:
+            print("Procsis Malo")
             self.Dowload(True)
             self.__TestGlobalMulti()
 
@@ -125,11 +126,13 @@ class Proxi:
         # time.sleep(3)
 
         ii = 0
+        vitsotekOld=0
         for i in range(lens * 2):
 
-            # if(i %200 == 0):
-            #     print(i)
-            #     print(len(potoc.keys()))
+            vitsotek = (i + 1) / (lens * 2) * 100
+            if(int(vitsotek)!=vitsotekOld):
+                vitsotekOld=int(vitsotek)
+                print(f"Procsi Operasions: {int(vitsotek)}%")
 
             if i % pot2 - pot >= 0:
                 p = potoc[(pot - (i % pot2 - pot)) - 1 - (i // (pot * 2))]
