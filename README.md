@@ -8,7 +8,7 @@
 # Windows: python -m venv venv
 #
 # mak,Linucs: source venv/bin/activate   
-# Windows: venv/bin/activate
+# Windows: venv\Scripts\activate
 #
 # pip install -r requirements.txt
 # python main.py
