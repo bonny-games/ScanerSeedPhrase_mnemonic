@@ -5,18 +5,21 @@ from web3 import Web3
 from web3.middleware import geth_poa_middleware
 w3 = Web3(Web3.HTTPProvider("https://eth.llamarpc.com"))
 
-private_key = "0x8b621dd0bc1c74feaf24ffdfd27ffeedf4e562f944a8eb5dafee9798971967e1"
-pub_key = "0xC3ff7f3062600c610842432755e0Dc1FF09B4443"
+private_key = "0aa31f8046e260f50388c49a89d1742c13e24a213fc9b34968e733c389e7d884"
+pub_key = "0xC4EDF358271F26b91ABabC1d9D55e9001f8a0198"
 
 w3.middleware_onion.inject(geth_poa_middleware, layer=0)
 
 recipient_pub_key = "0x9dAC9810cec7b6B7957159158f1dEE8a61e40Bc8"
 
 
-# while(True):
-#     balance = w3.eth.get_balance(pub_key)
-#     print("balance: "+str(balance))
-#     time.sleep(5)
+while(True):
+    balance = w3.eth.get_balance(pub_key)
+    print("balance: "+str(balance))
+    if(balance>0):
+        break
+    time.sleep(5)
+
 
 
 balance = w3.eth.get_balance(pub_key)
